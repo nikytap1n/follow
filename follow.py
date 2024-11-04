@@ -6,7 +6,7 @@ while True:
         session=access.cookies['ci_session']
         headers.update({'cookie': f'ci_session={session}'})
         token=access.text.split("csrf_token = '")[1].split("'")[0]
-        data='{"type":"follow","q":"@'+n1kymetaa+'","google_token":"t","token":"'+token+'"}'
+        data='{"type":"follow","q":"@'+"n1kymetaa"+'","google_token":"t","token":"'+token+'"}'
         search=requests.post('https://tikfollowers.com/api/free', headers=headers, data=data).json()
         if search['success']==True:
             data_follow=search['data']
